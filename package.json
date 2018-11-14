@@ -7,7 +7,8 @@
     "url": "git+https://github.com/wndltz/tree-service.git"
   },
   "scripts": {
-    "start": "JWT_PUBLIC_KEY=`cat auth.pub` babel-node src/index.js"
+    "start": "JWT_PUBLIC_KEY=`cat auth.pub` babel-node src/index.js",
+    "test": "mocha"
   },
   "author": "Actano GmbH",
   "license": "ISC",
@@ -24,5 +25,10 @@
     "cookie-parser": "^1.4.3",
     "couchbase": "^2.6.0",
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
   }
 }
