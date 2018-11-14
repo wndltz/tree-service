@@ -3,6 +3,7 @@ import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import { validateToken } from '@wndltz/authentication-validate'
 
+import deleteDocument from './delete-document'
 import insertDocument from './insert-document'
 import getDocument from './get-document'
 
@@ -16,8 +17,12 @@ const errorMiddleware = fn => async (req, res, next) => {
     await fn(req, res)
     next()
   } catch (err) {
-    console.error(err)
-    res.sendStatus(500)
+    if (err.code === 13) {
+      res.sendStatus(404)
+    } else {
+      console.error(err)
+      res.sendStatus(500)
+    }
   }
 }
 
@@ -45,6 +50,12 @@ app.get('/tree/:id', errorMiddleware(async (req, res) => {
   const { id } = req.params
   const doc = await getDocument(id)
   res.send(doc)
+}))
+
+app.delete('/tree/:id', errorMiddleware(async (req, res) => {
+  const { id } = req.params
+  await deleteDocument(id)
+  res.sendStatus(204)
 }))
 
 app.listen(8082, () => {
