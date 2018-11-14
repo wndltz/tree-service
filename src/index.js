@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import insertDocument from './insert-document'
+import getDocument from './get-document'
 
 const app = express()
 
@@ -23,9 +24,11 @@ app.post('/tree/:id', errorMiddleware(async (req, res) => {
   res.sendStatus(201)
 }))
 
-app.get('/tree/:id', (req, res) => {
-  res.send('NYI')
-})
+app.get('/tree/:id', errorMiddleware(async (req, res) => {
+  const { id } = req.params
+  const doc = await getDocument(id)
+  res.send(doc)
+}))
 
 app.listen(8082, () => {
   console.log('server started')
