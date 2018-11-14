@@ -1,10 +1,13 @@
 {
   "name": "@wndltz/tree-service",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wndltz/tree-service.git"
+  },
+  "scripts": {
+    "start": "babel-node src/index.js"
   },
   "author": "Actano GmbH",
   "license": "ISC",
@@ -15,6 +18,7 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-flow": "^7.0.0",
     "@babel/runtime": "^7.1.5",
+    "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "couchbase": "^2.6.0",
     "express": "^4.16.4"
