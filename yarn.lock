@@ -664,10 +664,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@wndltz/authentication-validate@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@wndltz/authentication-validate/-/authentication-validate-0.0.3.tgz#caf6be28e365efdc6c1cb1e865df832f0af81fc3"
-  integrity sha512-mKrBZLjl2Xmn/7Efx8H/uRPg0zy4FFnFbU3GlH6X7L1iNHGG/54wwuh3QPQtDNboE0cwBiI/ZXZTroe17nofFQ==
+"@wndltz/authentication-validate@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@wndltz/authentication-validate/-/authentication-validate-0.0.4.tgz#beb982c518767c36e28a45a32c65744022d7c471"
+  integrity sha512-X2lpFlxwFwZbD5Kvu8uviTTVRL5y3TCiHFRZZClv1xcCmgZWdWYaLbxHTVSdfBv1pLdyvJh6iHThscxDBCsNZA==
   dependencies:
     "@babel/cli" "^7.1.5"
     "@babel/core" "^7.1.6"

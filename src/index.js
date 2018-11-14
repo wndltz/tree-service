@@ -1,10 +1,10 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
+import { validateToken } from '@wndltz/authentication-validate'
 
 import insertDocument from './insert-document'
 import getDocument from './get-document'
-import { validateToken } from '@wndltz/authentication-validate'
 
 const app = express()
 
