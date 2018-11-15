@@ -1,13 +1,13 @@
 {
   "name": "@wndltz/tree-service",
   "version": "0.0.1",
-  "main": "src/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wndltz/tree-service.git"
   },
   "scripts": {
-    "start": "JWT_PUBLIC_KEY=`cat auth.pub` babel-node src/index.js",
+    "start": "JWT_PUBLIC_KEY_PATH=auth.pub node index.js",
     "test": "mocha"
   },
   "author": "Actano GmbH",
