@@ -37,6 +37,10 @@ const authenticationMiddleware = (req, res, next) => {
   next()
 }
 
+app.get('/__svc_alive', (req, res) => {
+  res.sendStatus(200)
+})
+
 app.use(authenticationMiddleware)
 
 app.post('/tree/:id', errorMiddleware(async (req, res) => {
