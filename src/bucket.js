@@ -1,13 +1,21 @@
 import couchbase from 'couchbase'
 import Bluebird from 'bluebird'
 
-const host = 'localhost'
-const defaultBucket = 'default'
+let bucket
 
-const cluster = new couchbase.Cluster(`couchbase://${host}`)
-cluster.authenticate()
+export default function() {
+  if (bucket) {
+    return bucket
+  }
 
-const bucket = cluster.openBucket(defaultBucket)
-Bluebird.promisifyAll(bucket)
+  const host = process.env.couchbaseHost || 'localhost'
+  const defaultBucket = process.env.couchbaseBucket || 'default'
 
-export default bucket
+  const cluster = new couchbase.Cluster(`couchbase://${host}`)
+  cluster.authenticate()
+
+  bucket = cluster.openBucket(defaultBucket)
+  Bluebird.promisifyAll(bucket)
+
+  return bucket
+}
