@@ -1,0 +1,20 @@
+version: '3'
+services:
+  couchbase:
+    image: couchbase:community-4.0.0
+    ports:
+      - 8091-8094:8091-8094
+      - 11207:11207
+      - 11210-11211:11210-11211
+      - 18091-18093:18091-18093
+  authentication:
+    image: wndltz/authentication
+    ports:
+    - "8081:8081"
+  tree-service:
+    image: wndltz/tree-service
+    ports:
+      - "8082:8082"
+    environment:
+      couchbaseHost: couchbase
+      couchbaseBucket: default
