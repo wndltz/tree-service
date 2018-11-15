@@ -11,6 +11,45 @@ services:
     image: wndltz/authentication
     ports:
     - "8081:8081"
+    environment:
+      authentication__public-key: |
+        -----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvFLir6KKKXqNsEuDXdck
+        ZfJwzX1055B3pNpjQ5ND/+Fumyzio/cQlFpvpdELsX2CiMJS3Uw7D8UjAP2SUVz/
+        q42uUQMpMqRFPegd0Rmj5BVmVNKpsc+OuN+CB4J+h9gWgJcw7HMEo/aJEKeBLkT2
+        6IXy037bEUY13jpLQcu4nQgpj8TBtB7KQAaEwNKyS1kdaHltgu//2uxE7HbWWsYa
+        hG2rgakslGFS1ikeEiawtgfjcSmpbxdD8xDtyQbUa3N6Z/KoPrpbG+4F8e2XCABC
+        XWc0SDBYfG7HIEtzVXtSslBtAMVdijZqOxx9eE1ATMluKUxJDe0Wj2Kcbn3MX9dA
+        TwIDAQAB
+        -----END PUBLIC KEY-----
+      authentication__private-key: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEpgIBAAKCAQEAvFLir6KKKXqNsEuDXdckZfJwzX1055B3pNpjQ5ND/+Fumyzi
+        o/cQlFpvpdELsX2CiMJS3Uw7D8UjAP2SUVz/q42uUQMpMqRFPegd0Rmj5BVmVNKp
+        sc+OuN+CB4J+h9gWgJcw7HMEo/aJEKeBLkT26IXy037bEUY13jpLQcu4nQgpj8TB
+        tB7KQAaEwNKyS1kdaHltgu//2uxE7HbWWsYahG2rgakslGFS1ikeEiawtgfjcSmp
+        bxdD8xDtyQbUa3N6Z/KoPrpbG+4F8e2XCABCXWc0SDBYfG7HIEtzVXtSslBtAMVd
+        ijZqOxx9eE1ATMluKUxJDe0Wj2Kcbn3MX9dATwIDAQABAoIBAQCkb5sP0NTisufU
+        75qc7aYSfkaQpuLU7wgJIcda0dOmMajqRZ7/nFMVtoGWP5n+OKEp2MOSB2Xqty+B
+        Refks1dq7CMxCZmHZngvPeYLFmBMX4MivW7+m0T7l+1psT/aTYwYa+uECkobAMFd
+        kWTyibUuAwesNDAEPVH74NqlcMSaF26Krz49MKgyGDNTB8tNX98rCCuzOrMdPEnu
+        mbWXsLEsOiQvm7WnIAucLDjCdKpKbGrkOYnNpwCIzzOIyrM/HjItpGDQzEBG0IT8
+        0Z69yVnvtISg0GwSVDjamr4kJRuqWQ6ZEvBmTzxG9z0l/awYD2kEtl7VhKil0mFS
+        8i/aOvWBAoGBAOakBIqpsmCZfzKjRUmK9v5TqHEENGAZkSB1/3c5aa107pgmqWTw
+        CggNyZWpEJPFJg6FAXg0Divtk8SqU2yeihw8oQ3ed4AwvV0p3le2aCEqXSZvabix
+        V5rCLT6JkquWdVXrJtc+uUPPuXxhAvTIfvd7o3zR5x9/lMBKWTD+7y0XAoGBANEH
+        v3WUkxzMf8fiF7S+nYwCtcGkdjx59ZOTQqKogjctAfRtAGaIgd53PWdY4qmrBwdY
+        uLfECGwE/THjZ/GdznwADlywJ92EgeI8KneL0qVvh6eb6WOw5DsnYVfpIk9bLnmH
+        7EmyvgY3nq6lJVnqBhn3R8sSYoYr679qGFrCYjmJAoGBAMK2dZ8a5Jzo+ZmmfTg5
+        OYw81FeVVSJMc1kURThCIBVwQn3xJdExVUa3XRgcQwJ9zkMzxqnUSKKNT9MYeJWa
+        wr5T8SPkTL7MZxHf5vXl6MMXIMzyAi8KiQr+I3RIcKqruyNuArx1F7NICzAWNoix
+        O39zwfH+w0C0VMCCBAp5LzLBAoGBAJ2tFoN/W6lxqUICDpfM4dLniGtVv8rGxLRZ
+        dP511iQA02SphI/TkQNbNvpqVjBeTqMADfaw7Rluef/T5mif/U4UTMEmMCws9DzP
+        3cjntDIO+2k3dso4eTEV95v0xGjQAzKxkU/WgPj3o79h29cDbS7RFVrdt2w2XVK6
+        mTx9PNLhAoGBALWhuaG+4O3FnKHCBVgSnk6+njSluT5ZKywwrhnpddH8C1YS2g1g
+        2/pPiOrmIdpHCjtFLRPb5m+7gfhsB36NMZW5fF7cRvpr3ouFXP3FW17J//f33CXa
+        FTcQstm0+/ompdDqxNXJM1U9gPUf349QiRSRhTKGeo2nWCAYaoUzU95e
+        -----END RSA PRIVATE KEY-----
   tree-service:
     image: wndltz/tree-service
     ports:
@@ -18,3 +57,13 @@ services:
     environment:
       couchbaseHost: couchbase
       couchbaseBucket: default
+      authentication__public-key: |
+        -----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvFLir6KKKXqNsEuDXdck
+        ZfJwzX1055B3pNpjQ5ND/+Fumyzio/cQlFpvpdELsX2CiMJS3Uw7D8UjAP2SUVz/
+        q42uUQMpMqRFPegd0Rmj5BVmVNKpsc+OuN+CB4J+h9gWgJcw7HMEo/aJEKeBLkT2
+        6IXy037bEUY13jpLQcu4nQgpj8TBtB7KQAaEwNKyS1kdaHltgu//2uxE7HbWWsYa
+        hG2rgakslGFS1ikeEiawtgfjcSmpbxdD8xDtyQbUa3N6Z/KoPrpbG+4F8e2XCABC
+        XWc0SDBYfG7HIEtzVXtSslBtAMVdijZqOxx9eE1ATMluKUxJDe0Wj2Kcbn3MX9dA
+        TwIDAQAB
+        -----END PUBLIC KEY-----

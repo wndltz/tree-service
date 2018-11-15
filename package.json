@@ -19,7 +19,7 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-flow": "^7.0.0",
     "@babel/runtime": "^7.1.5",
-    "@wndltz/authentication-validate": "^0.0.4",
+    "@wndltz/authentication-validate": "^0.0.5",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
